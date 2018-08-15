@@ -3,3 +3,15 @@
     <h4><%= current_user.first_name %> <%= current_user.last_name %></h4>
     <p><%= current_user.username %></p>
 </div>
+
+<% @user.@posts.each do |post| %> 
+    <h3><%= post.title %></h3> 
+
+    <% if post.image.file? %> 
+        <%= image_tag post.image.url %>
+    <% else %> 
+        no image file 
+    <% end %>
+
+    <p><%= time_ago_in_words post.created_at %></p> 
+<% end %> 
