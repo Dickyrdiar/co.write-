@@ -1,0 +1,49 @@
+body {
+    font-family: 'Roboto', sans-serif;
+ }
+ 
+.text {
+    text-align: center;
+    height: 35px;
+    }
+    
+    .log-form {
+        text-align: center;
+        margin-left: 356px;
+        margin-top: 95px;
+    }
+    
+    .form-sing {
+        text-align: center
+        margin-left: 356px;
+        margin-top: 95px;   
+    }
+    
+    .logo {
+        font-family: 'Slabo 27px', serif;
+        font-size: 20%;
+    }
+
+    .show {
+        font-size: 110%;
+        text-align: justify;
+        margin-top: 19px;
+    }
+    
+    .tetxInput {
+        text-align: center; 
+        margin-right: 50px;
+    }
+
+    .round-image-50 {
+        background-color: white;
+        border: 1px solid #d9d9d9;
+        border-radius: 25px;
+        -moz-border-radius: 25px;
+        -webkit-border-radius: 25px;
+        height: 50px;
+        width: 50px;
+        overflow: hidden;
+        text-align: center;
+        img { width: 100% }
+    }

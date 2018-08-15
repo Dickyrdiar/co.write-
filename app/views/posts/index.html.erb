@@ -1,0 +1,40 @@
+<div class="container-fluid text-center">
+  
+
+<%= form_tag(posts_path, :method => "get", id: "search-form") do %> 
+  <%= text_field_tag :search, params[:search], placeholder: "search" %>  
+  <%= submit_tag "Search" %> 
+<% end %> 
+
+<% @posts.in_groups_of(3, false).each do |row| %> 
+   <div class="row">
+    <% row.each do |post| %> 
+  
+     <div class="col-md-4">
+      
+        <h3> 
+         <%= link_to post.title, post, {:style=>'color:#85a3e0;', :class => "css_class"} %>  
+       </h3> 
+
+      <% if post.image.file? %> 
+          <%= image_tag post.image.url, :size => '250x150' %> 
+      <% else %> 
+          No image File!
+      <% end %>
+        
+
+         <p><%= time_ago_in_words post.created_at %> ago</p> 
+       
+         <%= link_to 'Read more', post, :class => 'btn btn-Primary' %>
+
+      </div>
+    <% end %> 
+  </div>
+ 
+
+<% end %>
+</div>
+
+
+
+

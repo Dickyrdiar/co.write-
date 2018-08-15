@@ -1,0 +1,41 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class= "inputText">
+
+    <div class="field">
+      <%= form.label :title %><br>
+      <%= form.text_field :title, :placeholder => "title", :class => "span8" %>
+    </div>
+
+
+  <div class="field">
+    <%= form.label :image %><br> 
+    <%= form.file_field :image, class: 'btn-btn-primary' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :text %><br>
+    <%= form.text_area :text, :placeholder => "write your story", :class => "span12" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tags %><br> 
+    <%= form.text_field :all_tags %> 
+  </div>
+
+  <div class="actions">
+    <%= form.submit"Make story", class: 'btn-btn-primary' %>
+  </div>
+   </div>
+<% end %>

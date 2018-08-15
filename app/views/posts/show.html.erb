@@ -1,0 +1,41 @@
+<div class="container text-center">
+  <div class="col-sm-12">
+  
+    <h1><%= @post.title %></h1>
+
+     <% if @post.image.file? %> 
+      <%= image_tag @post.image.url, :size => '600x550' %>
+    <% else %> 
+      
+      <% end %>
+
+    <br>
+    <div class="col-6">    
+      <p class="show">
+        <%= @post.text %>
+       </p>
+    </div>
+
+     <p><%= @post.all_tags %></p>
+     
+     <div class="container text-left"> 
+      <p><%= @comment.count %> Comment </p> 
+
+      <%= render @post.comments %> 
+
+      <h5>add a comment: </h5>
+      <%= render 'comment/form' %>
+    </div> -->  
+
+
+       <%= link_to 'Back', posts_path, :class => 'btn btn-light' %>
+
+    <% if can? :update, @post %> 
+      <%= link_to 'Edit', edit_post_path, :class => 'btn btn-light' %>
+    <% end %> 
+     
+    <% if can? :delete, @post %>
+      <%= link_to 'Delete', @post, method: :delete, :data => { confirm: 'are you sure ?' }, :class => 'btn btn-light' %>
+    <% end %>
+    </div>
+</div>
