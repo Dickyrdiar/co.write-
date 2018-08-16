@@ -47,3 +47,11 @@ body {
         text-align: center;
         img { width: 100% }
     }
+
+    .user_post {
+        margin-left: 30xp;
+    }
+
+    .post_user {
+        margin-bottom: 45px;
+    }

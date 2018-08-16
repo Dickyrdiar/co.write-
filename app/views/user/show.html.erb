@@ -5,4 +5,24 @@
 
     <%= link_to 'Edit profile', edit_user_registration_path %>
 </div>
+<br >
+<br >
+<br >
+<div class="container post_user">
+    <% @user_posts.each do |post| %>
+    
 
+        <% if post.image.file? %> 
+            <%= image_tag post.image.url, :size => '390x200' %>
+        <% else %> 
+            no image file 
+        <% end %> 
+
+        <h3 class="user_post"> 
+         <%= link_to post.title, post, {:style=>'color:#85a3e0;', :class => "css_class"} %>  
+       </h3> 
+
+        <p class="user_post"><%= time_ago_in_words post.created_at %></p>
+
+    <% end %>
+</div>
