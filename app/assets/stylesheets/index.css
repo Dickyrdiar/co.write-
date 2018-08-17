@@ -14,7 +14,7 @@ body {
     }
     
     .form-sing {
-        text-align: center
+        text-align: center;
         margin-left: 356px;
         margin-top: 95px;   
     }
@@ -45,13 +45,6 @@ body {
         width: 50px;
         overflow: hidden;
         text-align: center;
-        img { width: 100% }
+        img { width: 100% };
     }
 
-    .user_post {
-        margin-left: 30xp;
-    }
-
-    .post_user {
-        margin-bottom: 45px;
-    }
