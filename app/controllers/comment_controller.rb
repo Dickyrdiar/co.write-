@@ -6,7 +6,7 @@ class CommentController < ApplicationController
 
     def create 
         @post = Post.find(params[:post_id])
-        @comment = @post.commnets.create(params[:id].permit(:body))
+        @comment = @post.commnets.create(params[:post_id].permit(:body))
         @comment.save 
         redirect_to post_path(@post)
     end 
