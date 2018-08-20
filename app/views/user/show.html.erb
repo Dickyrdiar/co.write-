@@ -11,17 +11,16 @@
 <div class="container post_user">
   <div class="card" style="width: 18rem;">
     <% @user_posts.each do |post| %>
-    
+
+       <h3 class="user_post"> 
+         <%= link_to post.title, post, {:style=>'color:#85a3e0;', :class => "css_class"} %>  
+       </h3>     
 
         <% if post.image.file? %> 
             <%= image_tag post.image.url, :size => '390x200' %>
         <% else %> 
             no image file 
         <% end %> 
-
-        <h3 class="user_post"> 
-         <%= link_to post.title, post, {:style=>'color:#85a3e0;', :class => "css_class"} %>  
-       </h3> 
 
         <p class="user_post"><%= time_ago_in_words post.created_at %></p>
 
