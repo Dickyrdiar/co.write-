@@ -21,7 +21,7 @@
       <% else %> 
           No image File!
       <% end %>
-
+        <p><%= link_to 'Like', likes_path(post), method: :post %></p>
          <p><%= time_ago_in_words post.created_at %> ago</p> 
        
          <%= link_to 'Read more', post, :class => 'btn btn-Primary' %>
