@@ -21,8 +21,10 @@
       <% else %> 
           No image File!
       <% end %>
-      
-      <p><%= post.likes.count %> <%= (post.like.count) == 1 ? 'Like' : 'Likes' %></p>
+
+    <div class="tags">
+      <p><%= post.all_tags %></p>
+    </div> 
 
          <p><%= time_ago_in_words post.created_at %> ago</p> 
        
