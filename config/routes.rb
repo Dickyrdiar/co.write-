@@ -2,8 +2,12 @@ Rails.application.routes.draw do
   get 'user/show'
   devise_for :users
   resources :posts do
-       resources :comments 
-  end
+       resources :comments do 
+        member do 
+          put 'like', to: "posts#like"
+          put 'unlike', to: "posts#unlike"
+        end
+      end  
 end
 
 

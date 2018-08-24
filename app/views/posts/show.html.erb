@@ -18,6 +18,18 @@
   
 
     <p><%= @post.all_tags %></p>
+
+    <div class="PostLike">
+       
+
+        <div class="votes">
+            <% if current_user.liked? @post %> 
+              <%= link_to unlike_post_path(@post), method: :get, remote: true, class: 'unlike_post' %> 
+            <% else %> 
+              <%= link_to like_post_path(@post), method: :get, remote: true, class: 'like_post' %>
+            <% end %>
+        </div>
+    </div>
      
      <!--<div class="container text-left"> 
       <p><%= @comment.count %> Comment </p> 
@@ -31,12 +43,6 @@
 
        <%= link_to 'Back', posts_path, :class => 'btn btn-light' %>
 
-    <% if can? :update, @post %> 
-      <%= link_to 'Edit', edit_post_path, :class => 'btn btn-light' %>
-    <% end %> 
-     
-    <% if can? :delete, @post %>
-      <%= link_to 'Delete', @post, method: :delete, :data => { confirm: 'are you sure ?' }, :class => 'btn btn-light' %>
-    <% end %>
+  
     </div>
 </div>
