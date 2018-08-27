@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+    acts_as_votable
+
     def self.search(search)
         where("title LIKE?", "%#{search}%")
     end
