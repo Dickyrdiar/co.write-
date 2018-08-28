@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'user/show'
-  devise_for :users
+  devise_for :users 
+
+
   resources :posts do
     member do 
       put 'like', to: "posts#like"

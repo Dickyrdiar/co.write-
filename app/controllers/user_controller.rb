@@ -5,6 +5,19 @@ class UserController < ApplicationController
     @user_posts = @user.posts
   end
 
+  def search 
+    @user  = User.search(params[:search])
+  end
+
+  def self.seacrh(user_name)
+    if user_name 
+      user_name.downcase!
+      where('LOWER(name) LIKE ? ', "%#{user_name}%")
+    else 
+      all 
+    end
+  end
+
   private 
 
   def user_params 

@@ -29,14 +29,14 @@
   <% if (current_user.liked? @post) %>
   
      <% if (current_user.liked? @post) %>
-    <%= link_to unlike_post(@post), method: :post, class: "btn btn-default btn-sm" do %>
+    <%= link_to unlike_post_path(@post), method: :post, class: "btn btn-default btn-sm" do %>
     <span class="glyphicon glyphicon-chevron-down"></span>
       Unlike
     <%end %>
 
   <% else %>
 
-    <%= link_to like_post(@post), method: :post, class: "btn btn-primary btn-sm" do %>
+    <%= link_to like_post_path(@post), method: :post, class: "btn btn-primary btn-sm" do %>
     <span class="glyphicon glyphicon-chevron-up"></span>
       Like
     <% end %>
