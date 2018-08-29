@@ -11,7 +11,8 @@ class PostsController < ApplicationController
     else 
       @posts = Post.all.order("created_at DESC")
     end
-  
+    
+    user = User.find_by_username(params[:user])
   end
 
   # GET /posts/1

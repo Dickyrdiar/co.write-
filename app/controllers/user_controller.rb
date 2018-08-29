@@ -5,8 +5,8 @@ class UserController < ApplicationController
     @user_posts = @user.posts
   end
 
-  def search 
-    @user  = User.search(params[:search])
+  def index 
+    @user = User.search(params[:id])
   end
 
   def self.seacrh(user_name)
