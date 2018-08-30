@@ -3,13 +3,11 @@ Rails.application.routes.draw do
   devise_for :users 
 
 
-  resources :posts do
-    member do 
-      put 'like', to: "posts#like"
-      put 'unlike', to: "posts#unlike"
-    end
-       resources :comments do 
-      end  
+  resources :posts 
+      resources :comments do
+        collection do 
+          get :search 
+    end  
 end
 
 

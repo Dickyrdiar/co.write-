@@ -1,6 +1,8 @@
 <div class="container-fluid text-center">
   
-
+<%= form_tag posts_path, :method => :get do %>
+  <%= text_field_tag :query, params[:query] %> <%= submit_tag "Search!" %>
+<% end %>
 
 <% @posts.in_groups_of(3, false).each do |row| %> 
    <div class="row">

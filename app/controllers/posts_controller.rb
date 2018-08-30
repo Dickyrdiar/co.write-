@@ -75,6 +75,17 @@ class PostsController < ApplicationController
     end
   end
 
+  def search 
+    @posts = Post.search do 
+      keywords params[:query]
+    end.result 
+
+    respond_to do |format| 
+      format.html { redirect_to @post }
+      format.js 
+    end
+  end
+
   private
   
     # Use callbacks to share common setup or constraints between actions.
