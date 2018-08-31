@@ -1,6 +1,9 @@
 class Post < ApplicationRecord
     acts_as_votable
 
+    def self.search(search)
+        where("title LIKE ?", "%#{search}")
+    end
 
     has_many :taggings, dependent: :destroy
     has_many :tags, through: :taggings 
@@ -28,11 +31,6 @@ class Post < ApplicationRecord
     has_many :likes, dependent: :destroy
     def already_likes?(post) 
         self.likes.find(:all, :condition => ['post_id = ?', post.id]).size > 0
-    end
-
-    searchable do 
-        text :title, :body 
-        text :comment 
     end
 
 end

@@ -6,14 +6,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    if params[:search]
-      @posts = Post.search(params[:search]).order('created_at DESC')
-    else 
-      @posts = Post.all.order("created_at DESC")
-    end
-    
-    user = User.find_by_username(params[:user])
+   if params[:search]
+    @posts = Post.search(params[:search]).order("created_at DESC")
+   else 
+    @posts = Post.all.order('created_at DESC')
+   end
   end
+
 
   # GET /posts/1
   # GET /posts/1.json
@@ -75,17 +74,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def search 
-    @posts = Post.search do 
-      keywords params[:query]
-    end.result 
-
-    respond_to do |format| 
-      format.html { redirect_to @post }
-      format.js 
-    end
-  end
-
+  
   private
   
     # Use callbacks to share common setup or constraints between actions.
