@@ -33,9 +33,10 @@ class Post < ApplicationRecord
         self.likes.find(:all, :condition => ['post_id = ?', post.id]).size > 0
     end
 
-    searchable do  
-        text :title, :post 
-        text :tag 
+
+
+    def publish_month 
+        published_at.strftime("%B %Y")
     end
 
 end
