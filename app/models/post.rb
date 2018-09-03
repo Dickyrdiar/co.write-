@@ -33,4 +33,9 @@ class Post < ApplicationRecord
         self.likes.find(:all, :condition => ['post_id = ?', post.id]).size > 0
     end
 
+    searchable do  
+        text :title, :post 
+        text :tag 
+    end
+
 end

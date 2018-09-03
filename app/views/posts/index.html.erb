@@ -1,7 +1,7 @@
 <div class="container-fluid text-center">
   
 <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
   <%= submit_tag "Search" %>
 <% end %>
 

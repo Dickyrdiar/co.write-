@@ -6,17 +6,16 @@ Rails.application.routes.draw do
   resources :posts do
       resources :comments do
         collection do 
-          get :search 
-        end
+          get :search
       end  
     end
-
-
-
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: "posts#index"
   get 'users/:id', :to => 'user#show', :as => :user 
   get 'posts/:id', :to => 'comments#index'
+
+
 end
