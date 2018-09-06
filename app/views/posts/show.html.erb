@@ -56,6 +56,16 @@
       <%= render 'comment/form' %>
     </div> -->  
 
+      <div class="button">
+    
+    <% if can? :update, @post %> 
+      <%= link_to 'Edit', edit_post_path, :class => 'btn btn-light' %>
+    <% end %> 
+     
+    <% if can? :delete, @post %>
+      <%= link_to 'Delete', @post, method: :delete, :data => { confirm: 'are you sure ?' }, :class => 'btn btn-light' %>
+    <% end %>
+  </div> 
 
        <%= link_to 'Back', posts_path, :class => 'btn btn-light' %>
 

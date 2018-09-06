@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-    acts_as_votable
+    acts_as_votable 
 
     def self.search(search)
         where("title LIKE ?", "%#{search}")
@@ -28,12 +28,10 @@ class Post < ApplicationRecord
     has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
     validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
-    has_many :likes, dependent: :destroy
-    def already_likes?(post) 
-        self.likes.find(:all, :condition => ['post_id = ?', post.id]).size > 0
-    end
-
-
+    #has_many :likes, dependent: :destroy
+    #def already_likes?(post) 
+        #self.likes.find(:all, :condition => ['post_id = ?', post.id]).size > 0
+    #end
 
     def publish_month 
         published_at.strftime("%B %Y")

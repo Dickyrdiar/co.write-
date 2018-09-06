@@ -9,16 +9,11 @@ class UserController < ApplicationController
     @user = User.search(params[:id])
   end
 
-  def self.seacrh(user_name)
-    if user_name 
-      user_name.downcase!
-      where('LOWER(name) LIKE ? ', "%#{user_name}%")
-    else 
-      all 
-    end
-  end
-
   private 
+
+  def set_post 
+    @post = Post.find(params[:id])
+  end
 
   def user_params 
     params.require(user).permit(:avatar)
