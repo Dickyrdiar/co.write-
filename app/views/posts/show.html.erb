@@ -15,56 +15,14 @@
         <%= @post.text %>
        </p>
     </div>
-  
+   
 
     <p><%= @post.all_tags %></p>
 
-    <div class="PostLike">
-        <div class="vote_count">
-            <%= @post.get_likes.size %>
-        </div>
-
-        <div class="btn-group">
-
-  <% if (current_user.liked? @post) %>
-  
-     <% if (current_user.liked? @post) %>
-    <%= link_to unlike_post_path(@post), method: :post, class: "btn btn-default btn-sm" do %>
-    <span class="glyphicon glyphicon-chevron-down"></span>
-      Unlike
-    <%end %>
-
-  <% else %>
-
-    <%= link_to like_post_path(@post), method: :post, class: "btn btn-primary btn-sm" do %>
-    <span class="glyphicon glyphicon-chevron-up"></span>
-      Like
-    <% end %>
-  <% end %>
-
-  <% end %>
-
-</div>
+    <div classs="likeName"> 
+        <%= link_to "Like", post_like_path(@post), method: :post %>
     </div>
-     
-     <!--<div class="container text-left"> 
-      <p><%= @comment.count %> Comment </p> 
 
-      <%= render @post.comments %> 
-
-      <h5>add a comment: </h5>
-      <%= render 'comment/form' %>
-    </div> -->  
-
-      <div class="button">
-    
-    <% if can? :update, @post %> 
-      <%= link_to 'Edit', edit_post_path, :class => 'btn btn-light' %>
-    <% end %> 
-     
-    <% if can? :delete, @post %>
-      <%= link_to 'Delete', @post, method: :delete, :data => { confirm: 'are you sure ?' }, :class => 'btn btn-light' %>
-    <% end %>
   </div> 
 
        <%= link_to 'Back', posts_path, :class => 'btn btn-light' %>

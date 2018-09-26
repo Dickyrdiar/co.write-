@@ -1,21 +1,15 @@
 class LikeController < ApplicationController
-    def like  
-        @post = Post.find(params[:id])
-        @post.like_by current_user 
-        redirect_to post_path(@post)
-        respond_to do |format| 
-            format.html { redirect_to post_path(@post) }
-            format.js
-        end
-    end
+    def create 
+        @user  = current_user.id 
+        @post = params[:post_id]
+        likes = {user_id: @user, post_id: @post}
+        @likes = Like.new(likes)
 
-    def unlike 
-        @post = Post.find(params[:id])
-        @post.unlike_by current_user 
-        redirect_to post_path(@post)
-        respond_to do |format| 
-            format.html { redirect_to post_path(@post) }
-            format.js 
+        @like.save 
+        if @like.save 
+            redirect_to user_path(@user)
+        else 
+            redirect_to post_path
         end
     end
 end

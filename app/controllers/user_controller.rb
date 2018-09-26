@@ -5,10 +5,6 @@ class UserController < ApplicationController
     @user_posts = @user.posts
   end
 
-  def index 
-    @user = User.search(params[:id])
-  end
-
   private 
 
   def set_post 
