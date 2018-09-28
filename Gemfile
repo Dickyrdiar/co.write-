@@ -19,8 +19,8 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'paperclip', '~> 6.0'
 gem 'cancancan', '~> 2.0'
-gem 'bootstrap_form', '~> 2.7'
-
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

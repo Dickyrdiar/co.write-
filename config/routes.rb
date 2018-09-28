@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
 
   resources :posts do
+    collection do 
+      get :search
+    end
     resources :likes
       resources :comments do
     end
@@ -14,7 +17,7 @@ Rails.application.routes.draw do
   root to: "posts#index"
   get 'users/:id', :to => 'user#show', :as => :user 
   get 'posts/:id', :to => 'comments#index'
-  get 'posts/:id/edit', :to => 'posts#edit'
+
 
 
 end

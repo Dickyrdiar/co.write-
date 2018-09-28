@@ -1,11 +1,11 @@
 <div class="container-fluid text-center">
 
-<%= form_tag(posts_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-  <%= submit_tag "Search" %>
+<%= form_tag search_posts_path, :method => :get do %> 
+  <%= text_field_tag :query, params[:query] %> 
+  <%= submit_tag "Search" %> 
 <% end %>
 
-
+<% if @posts %> 
 <% @posts.in_groups_of(3, false).each do |row| %> 
    <div class="row">
     <% row.each do |post| %> 
@@ -22,6 +22,7 @@
           No image File!
       <% end %>
 
+
     <div class="tags">
       <p><%= post.all_tags %></p>
     </div> 
@@ -35,7 +36,7 @@
       </div>
     <% end %> 
   </div>
- 
+<% end %>
 
 <% end %>
 </div>

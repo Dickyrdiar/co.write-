@@ -6,11 +6,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    if params[:search]
-      @posts = Post.search(params[:search]).order("created_at DESC")
-    else 
-      @posts = Post.all.order('created_at DESC')
-    end
+    @posts = Post.all 
   end
 
   # GET /posts/1
@@ -73,6 +69,20 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  #GET /posts/search 
+  #GET /posts/seacrh.xml 
+
+  def search 
+    @post = Post.search do  
+      keywords params[:query] 
+    end.results
+
+    respond_to do |format| 
+      format.html { render :action => "index" }
+      format.xml { render :xml => @post }
+    end
+  end 
 
   
   private

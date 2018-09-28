@@ -1,8 +1,5 @@
 class Post < ApplicationRecord
-
-    def self.search(search)
-        where("title LIKE ?", "%#{search}")
-    end
+    validates_presence_of :title, :text
 
     has_many :taggings, dependent: :destroy
     has_many :tags, through: :taggings 
@@ -36,4 +33,21 @@ class Post < ApplicationRecord
     def publish_month 
         published_at.strftime("%B %Y")
     end
+
+    searchable do
+        text :title, :text, :all_tags 
+        text :comments do 
+            comments.map { |comment| comment.body }
+        end
+
+        integer :post_id 
+        integer :user_id 
+        integer :all_tags, :multiple => true 
+        time :created_at 
+        string :sort_title do 
+            title.downcase.gsub(/^(an?|the)\b/,'')
+        end
+    end
+
+
 end

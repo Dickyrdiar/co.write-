@@ -22,8 +22,7 @@ class User < ApplicationRecord
   def has_role?(role)
     roles.include?(role)
   end
-
-  has_many :posts,    dependent: :destroy
+  
   has_many :comments
 
   has_many :likes 
