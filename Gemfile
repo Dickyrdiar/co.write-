@@ -21,6 +21,7 @@ gem 'paperclip', '~> 6.0'
 gem 'cancancan', '~> 2.0'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
+gem 'progress_bar', '~> 1.3'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

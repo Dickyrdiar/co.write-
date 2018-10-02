@@ -39,14 +39,6 @@ class Post < ApplicationRecord
         text :comments do 
             comments.map { |comment| comment.body }
         end
-
-        integer :post_id 
-        integer :user_id 
-        integer :all_tags, :multiple => true 
-        time :created_at 
-        string :sort_title do 
-            title.downcase.gsub(/^(an?|the)\b/,'')
-        end
     end
 
 

@@ -19,15 +19,18 @@
 
     <p><%= @post.all_tags %></p>
 
-    <div classs="likeName"> 
-
+    <div classs="likeName">
         <%= link_to "Like", post_like_path(@post), method: :post %>
     </div>
 
+    <div class="container text-left">
+        <h5> <%= @comment.count %> Comments </h5> 
+        
+        <h5> add a comment : </h5> 
+        <%= render 'comment/form' %> 
+    </div> 
+
   </div> 
-
        <%= link_to 'Back', posts_path, :class => 'btn btn-light' %>
-
-  
     </div>
 </div>
