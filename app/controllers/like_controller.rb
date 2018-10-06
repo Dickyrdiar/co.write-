@@ -7,9 +7,9 @@ class LikeController < ApplicationController
 
         @like.save 
         if @like.save 
-            redirect_to user_path(@user)
+            redirect_to post_path(@post)
         else 
-            redirect_to post_path
+            redirect_to user_path
         end
     end
 end

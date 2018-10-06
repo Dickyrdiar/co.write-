@@ -35,7 +35,7 @@ class Post < ApplicationRecord
     end
 
     searchable do
-        text :title, :text, :all_tags 
+        text :title 
         text :comments do 
             comments.map { |comment| comment.body }
         end

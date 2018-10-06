@@ -49,4 +49,6 @@ body {
     text-align: center;
 }
    
-
+.nav.navbar-nav.navbar-right{
+    color: white;
+}

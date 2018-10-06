@@ -1,7 +1,7 @@
 <div class="container-fluid text-center">
 
 <%= form_tag search_posts_path, :method => :get do %> 
-  <%= text_field_tag :query, params[:query] %> 
+  <%= text_field_tag :search, params[:search] %> 
   <%= submit_tag "Search" %> 
 <% end %>
 

@@ -8,7 +8,7 @@
 
 
 
-<div class="container post_user">
+<div class="container text-center">
   <div class="card" style="width: 18rem;">
     <% @user_posts.each do |post| %>
 
@@ -23,10 +23,8 @@
         <% end %> 
 
         <p class="user_post"><%= time_ago_in_words post.created_at %></p>
-
-  </div>
-
-  <div class="button">
+        
+  
     <% if can? :delete, post %>
       <%= link_to 'Delete', post, method: :delete, :data => { confirm: 'are you sure ?' }, :class => 'btn btn-light' %>
     <% end %>
@@ -34,7 +32,7 @@
     <% if can? :update, post %> 
        <%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-light' %>
     <% end %>
-  </div> 
-
+  
     <% end %>
+    </div>
 </div>

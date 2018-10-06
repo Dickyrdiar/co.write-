@@ -6,7 +6,11 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all 
+    @search =  Post.search do  
+      fulltext(params[:search])
+    end
+
+    @posts = Post.all
   end
 
   # GET /posts/1
@@ -74,8 +78,9 @@ class PostsController < ApplicationController
 
   def search 
     @post = Post.search do  
-      keywords params[:query] 
-    end.results
+      keywords params[:search] 
+      paginate(page: params[:page])
+    end
 
     respond_to do |format| 
       format.html { render :action => "index" }
