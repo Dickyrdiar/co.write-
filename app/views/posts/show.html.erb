@@ -21,14 +21,7 @@
 
     <div classs="likeName">
  
-      <%= link_to "favorite", post_like_path(@post), method: :post, :class => 'btn btn-light' %>
     </div>
-
-    <div class="container text-left"> 
-        
-        <h5> add a comment : </h5> 
-        <%= render 'comment/form' %> 
-    </div> 
 
   </div> 
        <%= link_to 'Back', posts_path, :class => 'btn btn-primary' %>

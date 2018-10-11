@@ -6,11 +6,11 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @search =  Post.search do  
-      fulltext(params[:search])
+    @search = Post.search do 
+      fulltext params[:search] 
     end
 
-    @posts = Post.all
+    @posts = @search.results
   end
 
   # GET /posts/1
@@ -76,17 +76,17 @@ class PostsController < ApplicationController
   #GET /posts/search 
   #GET /posts/seacrh.xml 
 
-  def search 
-    @post = Post.search do  
-      keywords params[:search] 
-      paginate(page: params[:page])
-    end
+  #def search 
+    #@post = Post.search do  
+      #keywords params[:search] 
+      #paginate(page: params[:page])
+    #end
 
-    respond_to do |format| 
-      format.html { render :action => "index" }
-      format.xml { render :xml => @post }
-    end
-  end 
+    #respond_to do |format| 
+      #format.html { render :action => "index" }
+      #format.xml { render :xml => @post }
+    #end
+  #end 
 
   
   private

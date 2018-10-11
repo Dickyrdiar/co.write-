@@ -35,11 +35,11 @@ class Post < ApplicationRecord
     end
 
     searchable do
-        text :title 
+        text :title, :text
+        text :all_tags
         text :comments do 
-            comments.map { |comment| comment.body }
+            comments.map(&:post)
         end
+        time :created_at 
     end
-
-
 end

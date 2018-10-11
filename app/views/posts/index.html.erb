@@ -1,8 +1,10 @@
 <div class="container-fluid text-center">
 
-<%= form_tag search_posts_path, :method => :get do %> 
-  <%= text_field_tag :search, params[:search] %> 
-  <%= submit_tag "Search" %> 
+<%= form_tag posts_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
 <% end %>
 
 <% if @posts %> 

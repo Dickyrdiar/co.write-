@@ -7,7 +7,7 @@ class Ability
          can :manage, :all
       else
          can :manage, Post, user_id: user.id
-         can :read, :all
+         can :read
       end
     end
     #

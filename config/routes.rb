@@ -4,16 +4,18 @@ Rails.application.routes.draw do
 
 
   resources :posts do
+    resources :likes do
     collection do 
       get :search
     end
-      resources :comments do
+      resources :comments
     end
   end
-
-  resources :posts do 
-    resources :likes 
-  end 
+   
+    resources :posts do 
+      resources :likes 
+    end 
+  
 
 
 
@@ -22,5 +24,5 @@ Rails.application.routes.draw do
   root to: "posts#index"
   get 'users/:id', :to => 'user#show', :as => :user 
   get 'posts/:id', :to => 'posts#show'
-  get 'post/', :to => 'likes#index', :as => 'likes'
+  
 end
