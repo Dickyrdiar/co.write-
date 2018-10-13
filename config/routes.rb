@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     end
   end
    
+  resources :posts do 
+    resources :comments
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -19,5 +22,6 @@ Rails.application.routes.draw do
   get 'users/:id', :to => 'user#show', :as => :user 
   get 'posts/:id', :to => 'posts#show'
   get 'posts/:id', :to => 'likes#create', :as => :like
+  get 'posts/:id', :to => 'comments#index', :as => :comment
   
 end

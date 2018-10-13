@@ -1,4 +1,4 @@
-<div class="container text-center">
+<div class="container text-center Bodyname">
   <div class="col-sm-12">
   
     <h1><%= @post.title %></h1>
@@ -20,9 +20,16 @@
     <p><%= @post.all_tags %></p>
 
     <div classs="likeName">
-        <%= link_to 'favorite', post_like_path(@post), method: :post %>
+        <%= link_to 'favorite', post_path(@post), method: :post, :class => 'btn btn-primary' %>
     </div>
+    
+    <div class="CommentName container text-left">
+        <%= @comment.count %>
+        <%= render 'comment/comments' %>
 
+        <p>Create respond: </p> 
+        <%= render 'comment/form' %> 
+    </div>
 
   </div> 
        <%= link_to 'Back', posts_path, :class => 'btn btn-primary' %>
