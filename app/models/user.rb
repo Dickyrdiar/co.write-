@@ -25,10 +25,9 @@ class User < ApplicationRecord
   
   has_many :comments
 
-  has_many :likes 
-  has_many :liked_posts, through: :likes, source: :post
-
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/assets/images/default.jpg"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
+  has_many :likes 
+  has_many :liked_posts, through: :likes, source: :post
 end

@@ -12,17 +12,12 @@ Rails.application.routes.draw do
     end
   end
    
-    resources :posts do 
-      resources :likes 
-    end 
-  
-
-
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: "posts#index"
   get 'users/:id', :to => 'user#show', :as => :user 
   get 'posts/:id', :to => 'posts#show'
+  get 'posts/:id', :to => 'likes#create', :as => :like
   
 end

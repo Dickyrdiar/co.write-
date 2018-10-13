@@ -1,10 +1,10 @@
-<div class="container-fluid text-center">
+<div class="container-fluid text-center Bodyname">
 
 <%= form_tag posts_path, :method => :get do %>
-  <p>
+  <div class="form-group">
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
+    <%= submit_tag "Search", :name => nil, :class => 'btn btn-Primary' %>
+  </div>
 <% end %>
 
 <% if @posts %> 

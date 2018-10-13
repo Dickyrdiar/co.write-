@@ -13,23 +13,23 @@
 
   <div class= "inputText">
 
-    <div class="field">
+    <div class="form-group">
       <%= form.label :title %><br>
       <%= form.text_field :title, :placeholder => "title", :class => "span8" %>
     </div>
 
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :image %><br> 
     <%= form.file_field :image, class: 'btn-btn-primary' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :text %><br>
-    <%= form.text_area :text, :placeholder => "write your story", :class => "span12" %>
+    <%= form.text_area :text, :placeholder => "write your story", :class => "span12", :size => '70x10' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :tags %><br> 
     <%= form.text_field :all_tags %> 
   </div>

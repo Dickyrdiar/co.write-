@@ -20,8 +20,9 @@
     <p><%= @post.all_tags %></p>
 
     <div classs="likeName">
- 
+        <%= link_to 'favorite', post_like_path(@post), method: :post %>
     </div>
+
 
   </div> 
        <%= link_to 'Back', posts_path, :class => 'btn btn-primary' %>
