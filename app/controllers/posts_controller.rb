@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   def index
     @search = Post.search do 
       fulltext params[:search] 
+      paginate(page: params[:page])
     end
 
     @posts = @search.results

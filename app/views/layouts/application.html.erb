@@ -31,6 +31,18 @@
 				<li><%= link_to'Home', posts_path %></li>
 
 			</ul>
+
+			<ul class="nav navbra-nav navbar-left">
+				<li>
+					<%= form_tag posts_path, :method => :get, class: 'navbar-form navbar-right' do %>
+  						<div class="form-group">
+   							 <%= text_field_tag :search, params[:search], class: 'form-control mr-sm-2', placeholder: 'find something' %>
+   							 <%= submit_tag "Search", :name => nil, class: 'btn btn-outline-primary my-2 my-sm-0' %>
+  						</div>
+					<% end %>
+				</li>
+			</ul>
+
 			<ul class="nav navbar-nav navbar-right">
 				<% if user_signed_in? %>
         			<li><%= link_to 'New Post', new_post_path %></li> 	

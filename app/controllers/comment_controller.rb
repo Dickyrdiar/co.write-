@@ -1,6 +1,10 @@
 class CommentController < ApplicationController
 
-    def index
+    def new 
+        @comments = Comment
+    end
+
+    def show 
         @comment = Comment.find(params[:id])
     end
 
@@ -8,8 +12,11 @@ class CommentController < ApplicationController
         @post = Post.find(params[:post_id])
         @comment = @post.commnets.create(params[:post_id].permit(:body))
         @comment.save 
-        redirect_to post_comments(@post)
-    end 
+        redirect_to post_comment
+    end
+    
+    def delete 
+    end
 
     def comments_params 
         params.reqiure(:comment).permit(:body)

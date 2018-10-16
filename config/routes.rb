@@ -20,8 +20,8 @@ Rails.application.routes.draw do
 
   root to: "posts#index"
   get 'users/:id', :to => 'user#show', :as => :user 
-  get 'posts/:id', :to => 'posts#show'
-  get 'posts/:id', :to => 'likes#create', :as => :like
-  get 'posts/:id', :to => 'comments#index', :as => :comment
+  get 'post/:id', :to => 'comments#show', :as => :comments
+
+ 
   
 end
