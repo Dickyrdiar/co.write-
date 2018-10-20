@@ -18,7 +18,7 @@ body {
 }
 
 li a:hover {
-    background-color: #cce0ff;
+    background-color: blue;
     color: blue;
 }
 

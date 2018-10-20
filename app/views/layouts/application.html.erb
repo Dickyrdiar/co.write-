@@ -26,13 +26,7 @@
 			<%= link_to 'Co-Write', root_path, :class => 'navbar-brand' %>
 		</div>
 
-		<div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav">
-				<li><%= link_to'Home', posts_path %></li>
-
-			</ul>
-
-			<ul class="nav navbra-nav navbar-left">
+		<ul class="nav navbar-nav navbar-left">
 				<li>
 					<%= form_tag posts_path, :method => :get, class: 'navbar-form navbar-right' do %>
   						<div class="form-group">
@@ -41,6 +35,12 @@
   						</div>
 					<% end %>
 				</li>
+		</ul>
+
+		<div id="navbar" class="navbar-right">
+			<ul class="nav navbar-nav">
+				<li><%= link_to'Home', posts_path %></li>
+
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">

@@ -13,15 +13,22 @@ Rails.application.routes.draw do
   end
    
   resources :posts do 
-    resources :comments
+      resources :comments
   end
+
+  resources :categories, only:[:show]
+
+  #root to: "categories#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: "posts#index"
+
   get 'users/:id', :to => 'user#show', :as => :user 
   get 'post/:id', :to => 'comments#show', :as => :comments
+  get '/categories/:id', :to => 'categories#show', :as => :categores
 
+  
  
   
 end
