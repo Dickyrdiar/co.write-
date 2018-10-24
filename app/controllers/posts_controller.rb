@@ -74,21 +74,12 @@ class PostsController < ApplicationController
     end
   end
 
-  #GET /posts/search 
-  #GET /posts/seacrh.xml 
+  #add category on post 
 
-  #def search 
-    #@post = Post.search do  
-      #keywords params[:search] 
-      #paginate(page: params[:page])
-    #end
-
-    #respond_to do |format| 
-      #format.html { render :action => "index" }
-      #format.xml { render :xml => @post }
-    #end
-  #end 
-
+  def add_category 
+    @post = Post.find(params[:id])
+    @post.categories << Category.find(params[category_id])
+  end
   
   private
   

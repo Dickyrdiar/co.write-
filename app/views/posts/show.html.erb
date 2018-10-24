@@ -2,6 +2,10 @@
   <div class="col-sm-12">
   
     <h1><%= @post.title %></h1>
+    
+    <div class="user"> 
+      <p><%= @post.user.username %></p>
+    </div>
 
      <% if @post.image.file? %> 
       <%= image_tag @post.image.url, :size => '900x550' %>

@@ -12,7 +12,7 @@ class CommentController < ApplicationController
         @post = Post.find(params[:post_id])
         @comment = @post.commnets.create(params[:post_id].permit(:body))
         @comment.save 
-        redirect_to post_comment
+        redirect_to comments_path
     end
     
     def delete 
