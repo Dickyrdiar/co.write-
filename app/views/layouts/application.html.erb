@@ -14,7 +14,7 @@
 
   <body>
 
- <nav class="navbar navbar-light navbar-fixed-top " style="background-color:  #80b3ff;">
+ <nav class="navbar navbar-dark bg-dark navbar-fixed-top " style="background-color: #000d1a">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -37,14 +37,9 @@
 				</li>
 		</ul>
 
-		<div id="navbar" class="navbar-right">
-			<ul class="nav navbar-nav">
-				<li><%= link_to'Home', posts_path %></li>
-
-			</ul>
-
 			<ul class="nav navbar-nav navbar-right">
 				<% if user_signed_in? %>
+					<li><%= link_to'Home', posts_path %></li>
         			<li><%= link_to 'New Post', new_post_path %></li> 	
       				<li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
 							<li><%= link_to current_user.username, current_user  %></li>

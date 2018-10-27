@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'index/show'
-  get 'category/index'
-  get 'category/show'
-  get 'user/show'
   devise_for :users 
 
 
@@ -19,19 +15,16 @@ Rails.application.routes.draw do
       resources :comments
   end
 
+
   #root to: "categories#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: "posts#index"
 
+  #routes to access path 
   get 'users/:id', :to => 'user#show', :as => :user 
   get 'post/:id', :to => 'comments#show', :as => :comments
   get "/category" => "category#index"
-
-
-
-  
- 
   
 end

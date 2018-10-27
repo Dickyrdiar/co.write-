@@ -19,16 +19,11 @@
           No image File!
       <% end %>
 
-
-    <div class="tags">
-      <p><%= post.all_tags %></p>
-    </div> 
-
     <p><%= post.user.username %></p>
 
          <p><%= post.created_at.strftime("#{post.created_at.day.ordinalize} %B %Y") %> </p> 
        
-         <%= link_to 'Read more', post, :class => 'btn btn-Primary' %>
+         <%= link_to 'read more', post, :class => 'btn btn-Primary' %>
 
       </div>
     <% end %> 

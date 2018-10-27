@@ -12,20 +12,24 @@ body {
 
  li a {
     display: block;
-    color: #000;
+    color: white;
     padding: 8px 16px;
     text-decoration: none;
 }
 
 li a:hover {
-    background-color: blue;
-    color: blue;
+    background-color: black;
+    color: black;
 }
 
 .navbar-header a:hover{
-    background-color: blue;
+    background-color: white;
 }
  
+.navbar-brand {
+    color: white;
+}
+
 .text {
     text-align: center;
     height: 35px;
@@ -81,6 +85,7 @@ li a:hover {
 
 .Bodyname {
     margin-top: 60px;
+    text-align: left;
 }
 
 .Categoryname {
@@ -89,4 +94,11 @@ li a:hover {
 
 .navbar-center {
     margin-left: 46px;
+}
+
+.Bodyname{
+    text-align: left;
+    margin-left: 520px;
+    margin-bottom: -299px;
+    padding: 4px 20px;
 }
