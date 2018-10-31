@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'category/index'
+  get 'category/show'
   devise_for :users 
 
 
@@ -23,8 +25,7 @@ Rails.application.routes.draw do
   root to: "posts#index"
 
   #routes to access path 
-  get 'users/:id', :to => 'user#show', :as => :user 
-  get 'post/:id', :to => 'comments#show', :as => :comments
+  get 'users/:id', :to => 'user#show', :as => :user
   get "/category" => "category#index"
   
 end

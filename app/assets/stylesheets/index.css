@@ -8,6 +8,7 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    color: white;
  }
 
  li a {
@@ -39,12 +40,13 @@ li a:hover {
     text-align: center;
     margin-left: 356px;
     margin-top: 95px;
+    padding: 2em;
 }
     
 .form-sing {
     text-align: center;
-    margin-left: 356px;
-    margin-top: 95px;   
+    padding: 40px;
+    
 }
     
 .logo {
@@ -83,22 +85,43 @@ li a:hover {
     margin-top: 60px;
 }
 
-.Bodyname {
+.loginName {
     margin-top: 60px;
     text-align: left;
+    border: 1px solid black;
+    border-radius: 25px;
+    width :300px;  
+}
+
+.Bodyname {
+    margin-top: 60px;
 }
 
 .Categoryname {
     margin-top: 60px;
 }
 
+.SignupName {
+    margin-top: 60px;
+    padding: 40px;
+    border: 1px solid black;
+    border-radius: 25px;
+    width :300px;
+    margin-left: 500px;
+}
+
 .navbar-center {
     margin-left: 46px;
 }
+
 
 .Bodyname{
     text-align: left;
     margin-left: 520px;
     margin-bottom: -299px;
     padding: 4px 20px;
+}
+
+.title {
+    text-align: center;
 }

@@ -37,9 +37,6 @@ class Post < ApplicationRecord
     searchable do
         text :title, :text
         text :all_tags
-        text :user_name do
-            user.name
-        end
         
         text :comments do 
             comments.map(&:post)

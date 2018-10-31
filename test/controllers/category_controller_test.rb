@@ -6,4 +6,9 @@ class CategoryControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get show" do
+    get category_show_url
+    assert_response :success
+  end
+
 end
