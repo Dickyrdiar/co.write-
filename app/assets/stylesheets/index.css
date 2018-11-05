@@ -85,12 +85,9 @@ li a:hover {
     margin-top: 60px;
 }
 
-.loginName {
+.logName {
     margin-top: 60px;
-    text-align: left;
-    border: 1px solid black;
-    border-radius: 25px;
-    width :300px;  
+    width: 18em;
 }
 
 .Bodyname {
@@ -115,9 +112,9 @@ li a:hover {
 }
 
 
-.Bodyname{
+.card-body{
     text-align: left;
-    margin-left: 520px;
+    margin-left: 20px;
     margin-bottom: -299px;
     padding: 4px 20px;
 }

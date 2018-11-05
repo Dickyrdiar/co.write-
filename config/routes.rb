@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'caetgory/index'
   get 'category/index'
   get 'category/show'
   devise_for :users 
@@ -26,6 +27,6 @@ Rails.application.routes.draw do
 
   #routes to access path 
   get 'users/:id', :to => 'user#show', :as => :user
-  get "/category" => "category#index"
+  get "/category" => "caetgory#index"
   
 end

@@ -1,17 +1,15 @@
-<div class="container-fluid text-center Bodyname">
-
-
-
-<% if @posts %> 
-<% @posts.in_groups_of(3, false).each do |row| %> 
+<div class="card" style="margin-top: 60px;">
+  <div class="card-body"> 
+    <% if @posts %> 
+  <% @posts.in_groups_of(3, false).each do |row| %> 
    <div class="row">
     <% row.each do |post| %> 
   
      <div class="col-md-4">
-      
-        <h3> 
-         <%= link_to post.title, post, {:style=>'color:#85a3e0;', :class => "css_class"} %>  
-       </h3> 
+
+     <h3 class="card-title">
+        <%= link_to post.title, post, {:style=>'color:#85a3e0;', :class => "css_class"} %>
+     </h3>
 
       <% if post.image.file? %> 
           <%= image_tag post.image.url, :size => '250x150' %> 
@@ -19,14 +17,20 @@
           No image File!
       <% end %>
 
-    <p><%= post.user.username %></p>
+      <p class="card-subtitle mb-2 text-muted">
+          <%= post.user.username %> 
+      </p>
 
-         <p><%= post.created_at.strftime("#{post.created_at.day.ordinalize} %B %Y") %> </p> 
-       
-         <%= link_to 'read more', post, :class => "btn btn-dark" %>
+      <p class="card-subtitle mb-2 text-muted">
+          <%= post.created_at.strftime("#{post.created_at.day.ordinalize} %B %Y") %>
+      </p>
 
       <%= link_to 'read more', post, :class => "card-link" %>
     </div>
-      </div>
+    <% end %> 
+   </div>
+
+   <% end %>
   </div>
+  <% end %>
 </div>
