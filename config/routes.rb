@@ -27,6 +27,6 @@ Rails.application.routes.draw do
 
   #routes to access path 
   get 'users/:id', :to => 'user#show', :as => :user
-  get "/category" => "caetgory#index"
+  get "/category" => "category#index"
   
 end

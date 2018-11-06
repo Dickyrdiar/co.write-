@@ -45,6 +45,6 @@ class Post < ApplicationRecord
     end
 
     has_many :likes
-   belongs_to :categories
+    has_and_belongs_to_many :categories
     
 end
