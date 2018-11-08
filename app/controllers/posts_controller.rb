@@ -80,6 +80,14 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.categories << Category.find(params[category_id])
   end
+
+  def taggged 
+    if params[:tag].present? 
+      @post = Post.tagged_with(params[:tag])
+    else 
+      @post = Post.all 
+    end
+  end
   
   private
   
@@ -90,6 +98,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :text, :image, :user_id, :all_tags)
+      params.require(:post).permit(:title, :text, :image, :user_id, :tag_list)
     end
 end

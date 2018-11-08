@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'tags/index'
+  get 'tags/show'
+  get 'all_tags/index'
+  get 'all_tags/show'
   get 'caetgory/index'
   get 'category/index'
   get 'category/show'
@@ -28,5 +32,8 @@ Rails.application.routes.draw do
   #routes to access path 
   get 'users/:id', :to => 'user#show', :as => :user
   get "/category" => "category#index"
+  get "/tags" => "tags#index"
+  get "/tags/show" => "tags#show"
+
   
 end

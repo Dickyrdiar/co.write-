@@ -21,7 +21,7 @@
     </div>
    
 
-    <p><%= @post.all_tags %></p>
+    <p><%= @post.tag_list %></p>
 
     <div classs="likeName">
         <%= link_to 'favorite', post_path(@post), method: :post, :class => 'btn btn-primary' %>
