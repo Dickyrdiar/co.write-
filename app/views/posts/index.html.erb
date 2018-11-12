@@ -1,4 +1,17 @@
 <div class="card" style="margin-top: 60px;">
+
+  <div class="item">
+    <div class> 
+        <div class="block-title">Tags</div>
+    </div>
+
+    <div class="item-content-block tags">
+    <% @tags.each do |tag| %> 
+        <p class=tagname><%= tag.name %></p> 
+    <% end %>
+    </div>
+  </div>
+
   <div class="card-body"> 
     <% if @posts %> 
   <% @posts.in_groups_of(3, false).each do |row| %> 

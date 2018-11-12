@@ -26,7 +26,7 @@
 
   <div class="form-group col-md-12">
     <%= form.label :text %><br>
-    <%= form.text_area :text, :placeholder => "write your story", :class => "form-control", :size => '50x20' %>
+    <%= form.text_area :text, :class => :ckeditor, input_html: {:ckeditor => {:toolbar => 'FULL'}}, :placeholder => "write your story", :class => "form-control", :size => '50x20' %>
   </div>
 
   <br>

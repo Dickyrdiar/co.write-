@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+
   get 'tags/index'
   get 'tags/show'
-  get 'all_tags/index'
-  get 'all_tags/show'
-  get 'caetgory/index'
-  get 'category/index'
-  get 'category/show'
+  #mount Ckeditor::Engine => '/ckeditor'
+  #get 'all_tags/index'
+  #get 'all_tags/show'
+  #get 'caetgory/index'
+  #get 'category/index'
+  #get 'category/show'
   devise_for :users 
 
 
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
     end
       resources :comments
     end
+    resources :tags, only: [:index, :show]
   end
    
   resources :posts do 
@@ -33,7 +36,7 @@ Rails.application.routes.draw do
   get 'users/:id', :to => 'user#show', :as => :user
   get "/category" => "category#index"
   get "/tags" => "tags#index"
-  get "/tags/show" => "tags#show"
+ 
 
   
 end

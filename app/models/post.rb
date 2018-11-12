@@ -12,9 +12,7 @@ class Post < ApplicationRecord
     validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
     acts_as_taggable_on :tags
-
    
-
     #has_many :likes, dependent: :destroy
     #def already_likes?(post) 
         #self.likes.find(:all, :condition => ['post_id = ?', post.id]).size > 0
