@@ -21,7 +21,11 @@
     </div>
    
 
-    <p><%= raw @post.tag_list.map {|t| link_to t, tag_path(t).join(', ')} %></p>
+    <div class="item">
+      <div class="item-content-block tags">
+        <p><%= @post.tag_list %></p>
+      </div>
+    </div>
 
     <div classs="likeName">
         <%= link_to 'favorite', post_path(@post), method: :post, :class => 'btn btn-primary' %>

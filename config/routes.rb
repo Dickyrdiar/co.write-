@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     collection do 
       get :search
     end
-      resources :comments
+      resources :comments, only: [:create, :delete]
     end
     resources :tags, only: [:index, :show]
   end
@@ -35,7 +35,8 @@ Rails.application.routes.draw do
   #routes to access path 
   get 'users/:id', :to => 'user#show', :as => :user
   get "/category" => "category#index"
-  get "/tags" => "tags#index"
+
+
  
 
   
