@@ -1,25 +1,15 @@
 class CommentController < ApplicationController
-
-    def new 
-        @comments = Comment
-    end
-
-    def show 
-        @comment = Comment.find(params[:id])
-    end
-
     def create 
-        @post = Post.find(params[:post_id])
-        @comment = @post.commnets.create(params[:post_id].permit(:body))
+        @post = Post.find(params[:id])
+        @comment = @post.comments.create(params[:id].permit[:body] 
         @comment.save 
-        redirect_to comments_path
+        redirect_to post_path(@post)
     end
-    
-    def delete 
-    end
-
-    def comments_params 
-        params.reqiure(:comment).permit(:body)
+        
+    def destroy 
+        @comment = Comment.find(params[:id]) 
+        @comment.destroy 
+        redirect_to post_path(@post)
     end
 end
 
