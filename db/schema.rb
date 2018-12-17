@@ -10,18 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_08_191949) do
+ActiveRecord::Schema.define(version: 2018_12_17_111129) do
 
   create_table "categories", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "ancestry"
-    t.index ["ancestry"], name: "index_categories_on_ancestry"
   end
 
-  create_table "categories_post", id: false, force: :cascade do |t|
-    t.integer "category_id"
-    t.integer "post_id"
+  create_table "categories_posts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|

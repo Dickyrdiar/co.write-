@@ -2,8 +2,8 @@
 
   <div class="item">
     <div class="item-content-block tags">
-    <% @tags.each do |tag| %> 
-        <p class=tagname><%= tag.name %></p> 
+    <% @categories.each do |category| %> 
+        <p class=tagname><%= link_to category.name, category_index_url %></p> 
     <% end %>
     </div>
   </div>

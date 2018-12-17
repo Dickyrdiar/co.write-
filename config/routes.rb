@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'category/index'
+  get 'category/show'
   get 'tags/index'
   get 'tags/show'
   #mount Ckeditor::Engine => '/ckeditor'
@@ -34,6 +36,6 @@ Rails.application.routes.draw do
 
   #routes to access path 
   get 'users/:id', :to => 'user#show', :as => :user
-  
+  get 'category/:name', :to => 'category#index'  
   
 end

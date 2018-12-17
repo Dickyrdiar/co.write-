@@ -17,8 +17,7 @@ class Post < ApplicationRecord
     #def already_likes?(post) 
         #self.likes.find(:all, :condition => ['post_id = ?', post.id]).size > 0
     #end
-
-    
+    has_and_belongs_to_many :categories
 
     def publish_month 
         published_at.strftime("%B %Y")

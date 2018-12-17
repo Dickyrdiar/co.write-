@@ -12,8 +12,8 @@ class PostsController < ApplicationController
     end
 
     @posts = @search.results
-
     @tags = ActsAsTaggableOn::Tag.all
+    @categories = Category.all
   end
 
   # GET /posts/1
