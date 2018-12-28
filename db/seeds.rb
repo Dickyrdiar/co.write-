@@ -8,6 +8,21 @@
 categories = Category.create(
     [
         {name: 'Programing'},
-        {name: 'Traveling'}
+        {name: 'Traveling'},
+        {name: 'Technology'}, 
+        {name: 'Visual Design'}, 
+        {name: 'Web Devlopment'}, 
+        {name: 'Starup'}, 
+        {name: 'Art'}, 
+        {name: 'Design'}, 
+        {name: 'Museum'}, 
+        {name: 'Mental Healt'}, 
+        {name: 'Creativity'}, 
+        {name: 'Psycology'}, 
+        {name: 'Education'}, 
+        {name: 'Sport'}, 
+        {name: 'society'}, 
+        {name: 'Politics'},
+        {name: 'Future'},
     ]
 )

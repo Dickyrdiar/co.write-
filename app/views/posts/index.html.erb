@@ -1,12 +1,5 @@
 <div class="card" style="margin-top: 60px;">
 
-  <div class="item">
-    <div class="item-content-block tags">
-    <% @categories.each do |category| %> 
-        <p class=tagname><%= link_to category.name, category_index_url %></p> 
-    <% end %>
-    </div>
-  </div>
 
   <div class="card-body"> 
     <% if @posts %> 

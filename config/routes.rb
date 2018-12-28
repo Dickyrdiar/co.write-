@@ -24,7 +24,11 @@ Rails.application.routes.draw do
   end
    
   resources :posts do 
-      resources :comments
+      resources :comments 
+  end
+
+  resources :categories do 
+    resources :posts 
   end
 
 
@@ -36,6 +40,7 @@ Rails.application.routes.draw do
 
   #routes to access path 
   get 'users/:id', :to => 'user#show', :as => :user
-  get 'category/:name', :to => 'category#index'  
+  get '/category', :to => 'category#index'  
+  get 'category/:id', :to => 'category#show'
   
 end
